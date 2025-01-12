@@ -10,7 +10,7 @@
   - Dynamically using TimeStamp "for Unique Data" and DataFaker "for Descriptive Data", for Generating Dynamic and Unique Test Data --> (doesn't require any updates for any tests)
 - Used Design Pattern
   - Object Model Design by setting two Object Model Classes that hold actions on Request and Response of every Endpoint
-  - Builder Pattern for Constructing Request Pojo Class with input parameters step by step in fluent manner to build the Request Body
+  - Builder Pattern for constructing Request Pojo Class with input parameters step by step in fluent manner to build the Request Body
   - Fluent Object Model in writing Test Script, Thus chaining all Steps, Sent Requests and Validations on Responses in One Line of Code for E2E Scenario
   - Fluent Facade Design Pattern for abstracting/hiding unnecessary requests and encapsulate them into high level steps, thus making the script more short and readable for anyone 
   - With Help of Facade, Execute the same Request several times (like Create Multiple Notes) in one line of code
