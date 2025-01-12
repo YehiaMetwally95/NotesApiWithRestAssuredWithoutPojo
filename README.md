@@ -14,7 +14,7 @@
   - Fluent Object Model in writing Test Script, Thus chaining all Steps, Sent Requests and Validations on Responses in One Line of Code for E2E Scenario
   - Fluent Facade Design Pattern for abstracting/hiding unnecessary requests and encapsulate them into high level steps, thus making the script more short and readable for anyone 
   - With Help of Facade, Execute the same Request several times (like Create Multiple Notes) in one line of code
-- Execute the same Request several times (like Create Multiple Notes) in one line of code with help of Fluent Facade Design	
+- Execute the same  Request several times (like Create Multiple Notes) in one line of code with help of Fluent Facade Design	
 - Using APIManager Util that provide abstracted methods for sending all kind of requests and for different manipulations on API response
 - Allure Report for the Following:
   - Reporting Test Result, and Logging all Test Steps and Validations
