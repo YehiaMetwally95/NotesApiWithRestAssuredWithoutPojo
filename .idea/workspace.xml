@@ -4,39 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a270fe9f-c395-4917-8dd4-473b0ba92f34" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/UpdateNote/UpdateNoteWithStaticData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/Test - createNewNoteByDynamicRandomData.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/ChangePasswordRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/ChangePasswordRequestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/ChangePasswordResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/ChangePasswordResponseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/CreateNoteRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/CreateNoteRequestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/CreateNoteResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/CreateNoteResponseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/GetNoteRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/GetNoteRequestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/GetNoteResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/GetNoteResponseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/LoginRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/LoginRequestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/LoginResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/LoginResponseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/RegisterRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/RegisterRequestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/RegisterResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/RegisterResponseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/UpdateNoteRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/UpdateNoteRequestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/UpdateNoteResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/UpdateNoteResponseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojoClasses/GetNoteRequestPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojoClasses/GetNoteRequestPojo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojoClasses/LoginRequestPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojoClasses/LoginRequestPojo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojoClasses/RegisterRequestPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojoClasses/RegisterRequestPojo.java" afterDir="false" />
+    <list default="true" id="a270fe9f-c395-4917-8dd4-473b0ba92f34" name="Changes" comment="Test">
       <change beforePath="$PROJECT_DIR$/src/main/java/yehiaEngine/managers/ApisManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yehiaEngine/managers/ApisManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yehiaEngine/managers/JsonManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yehiaEngine/managers/JsonManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateNewNote/CreateNewNote.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateNewNote/CreateNewNoteFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateNewUser/CreateNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreateNewUser/CreateNewUserByStaticData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateNewUser/CreateNewUserFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UpdateNote/UpdateNote.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UpdateNote/UpdateNoteFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UpdateUserPassword/UpdateUserPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreateNewUser/CreateNewUserByRandomData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UpdateUserPassword/UpdateUserPasswordFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/CreateNewNoteTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/CreateNewNoteTestData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/CreateNewUserTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/CreateNewUserTestData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/UpdateNoteTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/UpdateNoteTestData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/UpdateUserPasswordTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/ChangeUserPasswordTestData.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -545,7 +514,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736720942023</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Test">
+      <option name="closed" value="true" />
+      <created>1737163255712</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1737163255712</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Test">
+      <option name="closed" value="true" />
+      <created>1737163286664</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1737163286664</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

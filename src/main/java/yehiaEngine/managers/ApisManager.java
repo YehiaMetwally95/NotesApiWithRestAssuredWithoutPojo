@@ -446,7 +446,7 @@ public class ApisManager {
     /**
      * *********************************  Mapping To Pojo Class  ****************************************
      */
-    private <T> T mapResponseToPojo(Response response,Class<T> pojoClass) {
+    public static <T> T mapResponseToPojo(Response response,Class<T> pojoClass) {
         try{
             String responseBodyAsString = getResponseBody(response);
             JsonMapper mapper = new JsonMapper();
