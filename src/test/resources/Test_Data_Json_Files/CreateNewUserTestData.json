@@ -16,14 +16,14 @@
 
   "RegisterDataInputs":[
     {
-      "Name": "Ahmed234",
-      "Email": "ahmeds200200@gmail.com",
-      "Password": "StrongPass123"
+      "name": "Ahmedss12s22345",
+      "email": "ahmedsssd22130200@gmail.com",
+      "password": "StrongPass123"
     },
     {
-      "Name": "Mostafa",
-      "Email": "mostafa590911@gmail.com",
-      "Password": "StrongPass@@@"
+      "name": "Mostafa",
+      "email": "mostafa590911@gmail.com",
+      "password": "StrongPass@@@"
     }
   ]
 }

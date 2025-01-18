@@ -2,80 +2,70 @@ package objectModels;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.json.JsonMapper;
+import com.google.gson.JsonObject;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import pojoClasses.*;
+import yehiaEngine.managers.JsonManager;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static yehiaEngine.managers.ApisManager.MakeAuthRequest;
 import static yehiaEngine.managers.ApisManager.getResponseBody;
 import static yehiaEngine.managers.PropertiesManager.getPropertiesValue;
 import static yehiaEngine.utilities.RandomDataGenerator.*;
 
+import static yehiaEngine.managers.ApisManager.MethodType.*;
+import static yehiaEngine.managers.ApisManager.ContentType.*;
+import static yehiaEngine.managers.ApisManager.ParameterType.*;
+import static yehiaEngine.managers.ApisManager.AuthType.*;
+
 public class UpdateNoteRequestModel {
 
     //Variables
     String updateNoteEndpoint = getPropertiesValue("baseUrlApi")+"notes/";
-    String responseBodyAsString;
+    JsonObject requestObject = new JsonObject();
     Response response;
-    JsonMapper mapper;
 
-    String token;
-    String noteID;
-
-    //Constructor to pass NodeID & Token from GetNote Model to UpdateNote Model
-    public UpdateNoteRequestModel(String noteID, String token)
-    {
-        this.noteID = noteID;
-        this.token = token;
-    }
-
-    //ObjectsFromPojoClasses
-    UpdateNoteRequestPojo requestObject;
-    UpdateNoteResponsePojo responseObject;
-
-    @Step("Prepare UpdateNote Request Statically from Json File")
+    @Step("Prepare Update Note Request Statically from Json File")
     //Method to get Request Body inputs from Json File Statically
-    public UpdateNoteRequestModel prepareUpdateNoteRequestFromJsonFile(String noteData) throws JsonProcessingException {
-        mapper = new JsonMapper();
-        requestObject = mapper.readValue(noteData, UpdateNoteRequestPojo.class);
+    public UpdateNoteRequestModel prepareUpdateNoteRequestFromJsonFile(String noteID,String noteData) {
+        updateNoteEndpoint = updateNoteEndpoint+noteID;
+
+        requestObject = JsonManager.convertJsonStringToJsonObject(noteData);
         return this;
     }
 
-    @Step("Prepare UpdateNote Request Dynamically With Random Values")
+    @Step("Prepare Update Note Request Dynamically With Random Values")
     //Method to set Request Body inputs from TimeStamp Dynamically
-    public UpdateNoteRequestModel prepareUpdateNoteRequestWithRandomValues(){
-        requestObject = UpdateNoteRequestPojo.builder()
-                .title(generateUniqueName())
-                .description(generateDescription())
-                .category(generateItemFromList(Arrays.asList("Home","Work","Personal")))
-                .completed(false)
-                .build();
+    public UpdateNoteRequestModel prepareUpdateNoteRequestWithRandomValues(String noteID){
+        updateNoteEndpoint = updateNoteEndpoint+noteID;
+
+        requestObject.addProperty("title",generateUniqueName());
+        requestObject.addProperty("description",generateDescription());
+        requestObject.addProperty("category",generateItemFromList(List.of("Home","Work","Personal")));
+        requestObject.addProperty("completed",generateItemFromList(List.of(true,false)));
+
         return this;
     }
 
     @Step("Send UpdateNote Request")
     //Method to Execute UpdateNote Request
-    public UpdateNoteResponseModel sendUpdateNoteRequest() throws JsonProcessingException {
+    public UpdateNoteResponseModel sendUpdateNoteRequest(String token) {
 
-        response =
-                MakeAuthRequest("Put", updateNoteEndpoint+noteID,requestObject
-                        ,"application/x-www-form-urlencoded","X-Auth-Token",
-                        null,null,token);
+        response = MakeAuthRequest(PUT, updateNoteEndpoint,requestObject,URLENCODED,XAuthToken
+                ,token,null,null);
 
-        responseBodyAsString = getResponseBody(response);
-        mapper = new JsonMapper();
-
-        responseObject = mapper.readValue(responseBodyAsString, UpdateNoteResponsePojo.class);
-
-        return new UpdateNoteResponseModel(requestObject,responseObject,token);
+        return new UpdateNoteResponseModel(requestObject,response);
     }
 
-    //Facade Method
+/*    //Facade Method
     @Step("Update The Note")
     public CreateNoteRequestModel updateTheNote(String noteJsonObject, String title,
-                                                String description, String category, String noteStatus) throws JsonProcessingException {
+                                                String description, String category, String noteStatus) {
         prepareUpdateNoteRequestFromJsonFile(noteJsonObject)
                 .sendUpdateNoteRequest()
                 .validateStatusFromResponse("200")
@@ -93,5 +83,5 @@ public class UpdateNoteRequestModel {
     @Step("Don't Update The Note")
     public CreateNoteRequestModel noUpdate() throws JsonProcessingException {
         return new CreateNoteRequestModel(token);
-    }
+    }*/
 }

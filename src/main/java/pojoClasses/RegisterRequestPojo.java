@@ -1,11 +1,11 @@
 package pojoClasses;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import lombok.extern.jackson.Jacksonized;
-import objectModels.RegisterRequestModel;
 
 @Getter
 @Setter

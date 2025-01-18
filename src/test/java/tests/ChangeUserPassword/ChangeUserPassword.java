@@ -1,22 +1,25 @@
-package tests.UpdateUserPassword;
+package tests.ChangeUserPassword;
 
+import objectModels.ChangePasswordRequestModel;
+import objectModels.LoginRequestModel;
 import objectModels.RegisterRequestModel;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pojoClasses.LoginRequestPojo;
 import yehiaEngine.managers.JsonManager;
 
-import java.io.IOException;
+import java.util.List;
 
-public class UpdateUserPassword {
-    String jsonFilePath = "src/test/resources/Test_Data_Json_Files/UpdateUserPasswordTestData.json";
+public class ChangeUserPassword {
+    String jsonFilePath = "src/test/resources/Test_Data_Json_Files/ChangeUserPasswordTestData.json";
     JsonManager json;
-    LoginRequestPojo loginRequestObject;
+    String token;
+    List<String> userCredentials;
+    String newPassword;
 
-    @Test
-    public void changeUserPassword() throws IOException {
+    @BeforeMethod
+    public void loginWithUser() {
         json = new JsonManager(jsonFilePath);
-        loginRequestObject =
+        userCredentials =
         new RegisterRequestModel()
                 //Prepare Register Request then Send it
                 .prepareRegisterRequestWithRandomValues()
@@ -27,43 +30,38 @@ public class UpdateUserPassword {
                 .validateStatusFromResponse(json.getData("StatusCode.Register"))
                 .validateNameFromResponse()
                 .validateEmailFromResponse()
+                .getUserCredentials();
 
-                //Get User Credentials from Register to Pass it & Prepare Login Request then Send it
-                .getNewUserCredentials()
-                .prepareLoginRequest()
+        token =
+        new LoginRequestModel()
+                .prepareLoginRequest(userCredentials.get(0),userCredentials.get(1))
                 .sendLoginRequest()
                 //Validations on Login Response
                 .validateMassageFromResponse(json.getData("Messages.Login"))
                 .validateSuccessFromResponse(json.getData("SuccessFlag.Login"))
                 .validateStatusFromResponse(json.getData("StatusCode.Login"))
                 .validateTokenExists()
+                .getToken();
+    }
 
-                //Get User Credentials from Login to Pass it & Prepare ChangePassword Request then Send it
-                .navigateToChangePassword()
-                .prepareChangePasswordRequestWithRandomPassword()
-                .sendChangePasswordRequest()
-                //Validations on ChangePassword Response
+    @Test
+    public void changeUserPassword() {
+        newPassword =
+        new ChangePasswordRequestModel()
+                .prepareChangePasswordRequestWithRandomPassword(userCredentials.get(1))
+                .sendChangePasswordRequest(token)
                 .validateMassageFromResponse(json.getData("Messages.ChangePassword"))
                 .validateSuccessFromResponse(json.getData("SuccessFlag.ChangePassword"))
                 .validateStatusFromResponse(json.getData("StatusCode.ChangePassword"))
+                .getNewPassword();
 
-                //Get User Credentials with the new password to Pass it & Prepare Login Request then Send it
-                .getUserCredentialsWithNewPassword()
-                .prepareLoginRequest()
+        new LoginRequestModel()
+                .prepareLoginRequest(userCredentials.get(0),newPassword)
                 .sendLoginRequest()
                 //Validations on Login Response
                 .validateMassageFromResponse(json.getData("Messages.Login"))
                 .validateSuccessFromResponse(json.getData("SuccessFlag.Login"))
                 .validateStatusFromResponse(json.getData("StatusCode.Login"))
-                .validateTokenExists()
-                .getRequestPojoObject();
-    }
-
-    @AfterMethod()
-    //Update the User Credentials in Json File with the New Password
-    public void updateUserCredentialsWithNewPassword() throws IOException {
-        json = new JsonManager(jsonFilePath);
-        json.setData("UserCredentials1.Email",loginRequestObject.getEmail());
-        json.setData("UserCredentials1.Password",loginRequestObject.getPassword());
+                .validateTokenExists();
     }
 }

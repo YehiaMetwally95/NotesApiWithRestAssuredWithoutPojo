@@ -22,16 +22,16 @@
 
   "NoteDataInputs":[
     {
-      "Title": "TestTile1",
-      "Description": "This is long sentence",
-      "Category": "Work",
-      "NoteStatus": "true"
+      "title": "TestTile1",
+      "description": "This is long sentence",
+      "category": "Work",
+      "NoteStatus": "false"
     },
     {
-      "Title": "TestTile2",
-      "Description": "This is very long sentence",
-      "Category": "Personal",
-      "NoteStatus": "true"
+      "title": "TestTile2",
+      "description": "This is very long sentence",
+      "category": "Personal",
+      "NoteStatus": "false"
     }
   ]
 }

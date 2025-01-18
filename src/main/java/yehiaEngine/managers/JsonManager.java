@@ -153,13 +153,37 @@ public class JsonManager {
         return gson.fromJson(jsonString,JsonObject.class);
     }
 
-    //Method to Convert Object to Map
+    //Method to Convert Json Object to Map
+    public static Map<String,Object> convertJsonObjectToMap(JsonObject jsonObject) {
+        Gson gson = new Gson();
+        Map<String, Object> map = gson.fromJson(jsonObject, new TypeToken<Map<String, Object>>(){}.getType());
+        return map;
+    }
+
+    //Method to Convert JsonString to Map
     public static  Map<String, Object> convertJsonStringToMap(Object object) {
         Gson gson = new Gson();
         String jsonString = gson.toJson(object);
         Map<String, Object> map =
                 gson.fromJson(jsonString, new TypeToken<Map<String, Object>>() {}.getType());
         return map;
+    }
+
+    //Method to Convert JsonString to JsonObject
+    public static  JsonObject convertJsonStringToJsonObject(String jsonString) {
+        JsonObject jsonObject = JsonParser.parseString(jsonString).getAsJsonObject();
+        return jsonObject;
+    }
+
+    public static boolean isJsonString(String input) {
+        try {
+            JsonElement jsonElement = JsonParser.parseString(input);
+            // Successfully parsed
+            return true;
+        } catch (JsonSyntaxException e) {
+            // Failed to parse
+            return false;
+        }
     }
 }
 

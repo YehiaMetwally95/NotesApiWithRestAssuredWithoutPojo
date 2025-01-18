@@ -2,52 +2,39 @@ package objectModels;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.json.JsonMapper;
+import com.google.gson.JsonObject;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import pojoClasses.GetNoteRequestPojo;
 import pojoClasses.GetNoteResponsePojo;
+import yehiaEngine.managers.JsonManager;
 
+import java.util.HashMap;
 import java.util.Map;
 
+import static yehiaEngine.managers.ApisManager.ParameterType.*;
+import static yehiaEngine.managers.ApisManager.AuthType.*;
 import static yehiaEngine.managers.ApisManager.*;
 import static yehiaEngine.managers.PropertiesManager.getPropertiesValue;
-
 public class GetNoteRequestModel {
 
     //Variables
-    String getNoteEndpoint = getPropertiesValue("baseUrlApi")+"notes/";
-    String responseBodyAsString;
+    String getNoteEndpoint = getPropertiesValue("baseUrlApi")+"notes/{id}";
+    JsonObject requestObject = new JsonObject();
     Response response;
-    JsonMapper mapper;
 
-
-    String noteID;
-    String token;
-
-    //Constructor to pass NodeID & Token from CreateNote Model to GetNote Model
-    public GetNoteRequestModel(String noteID,String token)
-    {
-        this.noteID = noteID;
-        this.token = token;
+    @Step("Prepare Get Note Request With Note ID")
+    public GetNoteRequestModel prepareGetNoteRequestWithNoteID(String noteID) {
+        requestObject.addProperty("id",noteID);
+        return this;
     }
 
-    //ObjectsFromPojoClasses
-    GetNoteRequestPojo requestObject;
-    GetNoteResponsePojo responseObject;
-
-    @Step("Send GetNote Request")
+    @Step("Send Get Note Request")
     //Method to Execute Get Note Request
-    public GetNoteResponseModel sendGetNoteRequest() throws JsonProcessingException {
+    public GetNoteResponseModel sendGetNoteRequest(String token) {
+        response = GetAuthRequest(getNoteEndpoint,PATH,requestObject,XAuthToken,
+                token,null,null);
 
-        response =
-                GetAuthRequest(getNoteEndpoint+noteID,null,
-                        "X-Auth-Token",null,null,token);
-
-        responseBodyAsString = getResponseBody(response);
-        mapper = new JsonMapper();
-
-        responseObject = mapper.readValue(responseBodyAsString, GetNoteResponsePojo.class);
-
-        return new GetNoteResponseModel(requestObject,responseObject,token);
+        return new GetNoteResponseModel(requestObject,response);
     }
 }

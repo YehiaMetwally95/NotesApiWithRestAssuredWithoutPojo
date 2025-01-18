@@ -1,65 +1,77 @@
 package objectModels;
 
+import com.google.gson.JsonObject;
 import io.qameta.allure.Step;
-import pojoClasses.RegisterRequestPojo;
-import pojoClasses.RegisterResponsePojo;
+import io.restassured.response.Response;
+import lombok.Getter;
 import yehiaEngine.assertions.CustomAssert;
+import yehiaEngine.managers.ApisManager;
+
+import java.util.List;
+
+import static io.restassured.RestAssured.given;
+import static yehiaEngine.managers.ApisManager.*;
 
 public class RegisterResponseModel {
-
-    //ObjectsFromPojoClasses
-    RegisterRequestPojo requestObject;
-    RegisterResponsePojo responseObject;
-
     //Variables
+    JsonObject requestObject;
+    //Getter Methods
+    @Getter
+    Response response;
 
     //Constructor to pass the response from Request Model to Response Model
-    public RegisterResponseModel(RegisterRequestPojo requestObject , RegisterResponsePojo responseObject) {
+    public RegisterResponseModel(JsonObject requestObject , Response response) {
         this.requestObject = requestObject;
-        this.responseObject = responseObject;
+        this.response = response;
     }
 
     //Validation Methods
     @Step("validateMassageFromResponse")
     public RegisterResponseModel validateMassageFromResponse(String message) {
-        CustomAssert.assertEquals(responseObject.getMessage(),message);
+        String actualMessage = getJsonStringValueFromResponse(response,"message");
+        CustomAssert.assertEquals(actualMessage,message);
         return this;
     }
 
     @Step("validateStatusFromResponse")
     public RegisterResponseModel validateStatusFromResponse(String statusCode) {
-        CustomAssert.assertEquals(responseObject.getStatus(),Integer.parseInt(statusCode));
+        int actualStatusCode = ApisManager.getResponseCode(response);
+        CustomAssert.assertEquals(actualStatusCode,Integer.parseInt(statusCode));
         return this;
     }
 
     @Step("validateSuccessFromResponse")
     public RegisterResponseModel validateSuccessFromResponse(String successFlag) {
-        CustomAssert.assertEquals(responseObject.isSuccess(),Boolean.parseBoolean(successFlag));
+        boolean actualSuccess = getJsonBooleanValueFromResponse(response,"success");
+        CustomAssert.assertEquals(actualSuccess,Boolean.parseBoolean(successFlag));
         return this;
     }
 
     @Step("validateNameFromResponse")
     public RegisterResponseModel validateNameFromResponse() {
-        CustomAssert.assertEquals(responseObject.getData().getName(),requestObject.getName());
+        String actualName = getJsonStringValueFromResponse(response,"data.name");
+        String expectedName = requestObject.get("name").getAsString();
+        CustomAssert.assertEquals(actualName,expectedName);
         return this;
     }
 
     @Step("validateEmailFromResponse")
     public RegisterResponseModel validateEmailFromResponse() {
-        CustomAssert.assertEquals(responseObject.getData().getEmail(),requestObject.getEmail());
+        String actualEmail = getJsonStringValueFromResponse(response,"data.email");
+        String expectedEmail = requestObject.get("email").getAsString();
+        CustomAssert.assertEquals(actualEmail,expectedEmail);
         return this;
     }
 
-    //Getter Methods
-    public RegisterRequestPojo getRequestPojoObject() {
+    public JsonObject getRequest() {
         return requestObject;
     }
 
-    public RegisterResponsePojo getResponsePojoObject() {
-        return responseObject;
+    public List<String> getUserCredentials(){
+        return List.of(requestObject.get("email").getAsString(),requestObject.get("password").getAsString());
     }
 
-    //Get Needed Data from Registration Model and pass it to Login Model
+/*    //Get Needed Data from Registration Model and pass it to Login Model
     @Step("Get New User Credentials")
     public LoginRequestModel getNewUserCredentials() {
 
@@ -67,5 +79,5 @@ public class RegisterResponseModel {
                 requestObject.getEmail(),
                 requestObject.getPassword()
         );
-    }
+    }*/
 }

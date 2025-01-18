@@ -1,60 +1,91 @@
 package objectModels;
 
+import com.google.gson.JsonObject;
 import io.qameta.allure.Step;
 
+import io.restassured.response.Response;
+import lombok.Getter;
 import pojoClasses.UpdateNoteRequestPojo;
 import pojoClasses.UpdateNoteResponsePojo;
 import yehiaEngine.assertions.CustomAssert;
+import yehiaEngine.managers.ApisManager;
+
+import static yehiaEngine.managers.ApisManager.getJsonBooleanValueFromResponse;
+import static yehiaEngine.managers.ApisManager.getJsonStringValueFromResponse;
 
 public class UpdateNoteResponseModel {
-    //ObjectsFromPojoClasses
-    UpdateNoteRequestPojo requestObject;
-    UpdateNoteResponsePojo responseObject;
-
     //Variables
-    String token;
-    boolean noteStatus;
+    JsonObject requestObject;
+    @Getter
+    Response response;
 
     //Constructor to pass the response from Request Model to Response Model
-    public UpdateNoteResponseModel(UpdateNoteRequestPojo requestObject,
-                                   UpdateNoteResponsePojo responseObject,String token) {
+    public UpdateNoteResponseModel(JsonObject requestObject , Response response) {
         this.requestObject = requestObject;
-        this.responseObject= responseObject;
-        this.token = token;
+        this.response= response;
     }
 
     //Validation Methods
     @Step("validateMassageFromResponse")
     public UpdateNoteResponseModel validateMassageFromResponse(String message) {
-        CustomAssert.assertEquals(responseObject.getMessage(),message);
+        String actualMessage = getJsonStringValueFromResponse(response,"message");
+        CustomAssert.assertEquals(actualMessage,message);
         return this;
     }
 
     @Step("validateStatusFromResponse")
     public UpdateNoteResponseModel validateStatusFromResponse(String statusCode) {
-        CustomAssert.assertEquals(responseObject.getStatus(),Integer.parseInt(statusCode));
+        int actualStatusCode = ApisManager.getResponseCode(response);
+        CustomAssert.assertEquals(actualStatusCode,Integer.parseInt(statusCode));
         return this;
     }
 
     @Step("validateSuccessFromResponse")
     public UpdateNoteResponseModel validateSuccessFromResponse(String successFlag) {
-        CustomAssert.assertEquals(responseObject.isSuccess(),Boolean.parseBoolean(successFlag));
+        boolean actualSuccess = getJsonBooleanValueFromResponse(response,"success");
+        CustomAssert.assertEquals(actualSuccess,Boolean.parseBoolean(successFlag));
+        return this;
+    }
+
+    @Step("Validate Description From Response")
+    public UpdateNoteResponseModel validateDescriptionFromResponse() {
+        String actualDescription = getJsonStringValueFromResponse(response,"data.description");
+        String expectedDescription = requestObject.get("description").getAsString();
+        CustomAssert.assertEquals(actualDescription,expectedDescription);
+        return this;
+    }
+
+    @Step("Validate Title From Response")
+    public UpdateNoteResponseModel validateTitleFromResponse() {
+        String actualTitle = getJsonStringValueFromResponse(response,"data.title");
+        String expectedTitle = requestObject.get("title").getAsString();
+        CustomAssert.assertEquals(actualTitle,expectedTitle);
+        return this;
+    }
+
+    @Step("Validate Category From Response")
+    public UpdateNoteResponseModel validateCategoryFromResponse() {
+        String actualCategory = getJsonStringValueFromResponse(response,"data.category");
+        String expectedCategory = requestObject.get("category").getAsString();
+        CustomAssert.assertEquals(actualCategory,expectedCategory);
+        return this;
+    }
+
+    @Step("Validate NoteStatus From Response")
+    public UpdateNoteResponseModel validateNoteStatusFromResponse() {
+        boolean actualStatus = getJsonBooleanValueFromResponse(response,"data.completed");
+        boolean expectedStatus = requestObject.get("completed").getAsBoolean();
+        CustomAssert.assertEquals(actualStatus,expectedStatus);
         return this;
     }
 
     //Getter Methods
-    public UpdateNoteRequestPojo getRequestPojoObject() {
+    public JsonObject getRequest() {
         return requestObject;
     }
 
-    public UpdateNoteResponsePojo getResponsePojoObject() {
-        return responseObject;
-    }
-
-    //Get Needed Token & Note ID from UpdateNote Model and pass it to GetNote Model
-    @Step("Get NoteID")
-    public GetNoteRequestModel getNoteID()
-    {
-        return new GetNoteRequestModel(responseObject.getData().getId(),token);
+    @Step("Get Note ID")
+    public String getNoteID(){
+        return getJsonStringValueFromResponse(response,"data.id");
     }
 }

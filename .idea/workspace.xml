@@ -5,7 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a270fe9f-c395-4917-8dd4-473b0ba92f34" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/UpdateNote/UpdateNoteWithStaticData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/Test - createNewNoteByDynamicRandomData.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/ChangePasswordRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/ChangePasswordRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/ChangePasswordResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/ChangePasswordResponseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/CreateNoteRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/CreateNoteRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/CreateNoteResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/CreateNoteResponseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/GetNoteRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/GetNoteRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/GetNoteResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/GetNoteResponseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/LoginRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/LoginRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/LoginResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/LoginResponseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/RegisterRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/RegisterRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/RegisterResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/RegisterResponseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/UpdateNoteRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/UpdateNoteRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objectModels/UpdateNoteResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objectModels/UpdateNoteResponseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pojoClasses/GetNoteRequestPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojoClasses/GetNoteRequestPojo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pojoClasses/LoginRequestPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojoClasses/LoginRequestPojo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pojoClasses/RegisterRequestPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojoClasses/RegisterRequestPojo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yehiaEngine/managers/ApisManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yehiaEngine/managers/ApisManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yehiaEngine/managers/JsonManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yehiaEngine/managers/JsonManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateNewNote/CreateNewNote.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateNewNote/CreateNewNoteFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateNewUser/CreateNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreateNewUser/CreateNewUserByStaticData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateNewUser/CreateNewUserFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UpdateNote/UpdateNote.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UpdateNote/UpdateNoteFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UpdateUserPassword/UpdateUserPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreateNewUser/CreateNewUserByRandomData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UpdateUserPassword/UpdateUserPasswordFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/CreateNewNoteTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/CreateNewNoteTestData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/CreateNewUserTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/CreateNewUserTestData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/UpdateNoteTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/UpdateNoteTestData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/UpdateUserPasswordTestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Test_Data_Json_Files/ChangeUserPasswordTestData.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +63,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -39,12 +71,12 @@
     &quot;assignee&quot;: &quot;YehiaMetwally95&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/YehiaMetwally95/NotesApiWithRestAssuredWithoutPojo",
-    "accountId": "8e0ad561-fc41-4f51-bc0c-601cdc47f971"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/YehiaMetwally95/NotesApiWithRestAssuredWithoutPojo&quot;,
+    &quot;accountId&quot;: &quot;8e0ad561-fc41-4f51-bc0c-601cdc47f971&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/org/testng/testng/7.10.2/testng-7.10.2-sources.jar!/org/testng/internal/invokers/MethodRunner.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/testng/testng/7.10.2/testng-7.10.2-sources.jar!/org/testng/internal/invokers/TestInvoker.java" root0="SKIP_INSPECTION" />
@@ -64,6 +96,7 @@
     "Docker.resources.json-server: Compose Deployment.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.ChangeUserPassword.changeUserPassword.executor": "Run",
     "TestNG.CreateNewNote.createNewNoteByDynamicRandomData.executor": "Run",
     "TestNG.CreateNewNote.createNewNoteByStaticDataFromJsonFile.executor": "Run",
     "TestNG.CreateNewNote.executor": "Run",
@@ -71,6 +104,9 @@
     "TestNG.CreateNewNoteFacade.createNewNote.executor": "Run",
     "TestNG.CreateNewNoteFacade.createNewNoteFacade.executor": "Run",
     "TestNG.CreateNewNoteFacade.executor": "Run",
+    "TestNG.CreateNewNoteWithRandomData.createNewNoteByRandomDataDynamically.executor": "Run",
+    "TestNG.CreateNewNoteWithRandomData.executor": "Run",
+    "TestNG.CreateNewNoteWithStaticData.createNewNoteByStaticDataFromJsonFile.executor": "Run",
     "TestNG.CreateNewUser.createNewUserByDynamicRandomData.executor": "Run",
     "TestNG.CreateNewUser.createNewUserByStaticDataFromJsonFile.executor": "Run",
     "TestNG.CreateNewUser.createNewUserThenLogin.executor": "Run",
@@ -89,6 +125,9 @@
     "TestNG.Test1.PostwithRequestBodyfromPojoAsContentTypeIsJson.executor": "Run",
     "TestNG.Test1.testmethod1.executor": "Run",
     "TestNG.Test1.testmethod2.executor": "Run",
+    "TestNG.TestClass.test.executor": "Run",
+    "TestNG.TestClass.test1.executor": "Run",
+    "TestNG.TestClass.test2.executor": "Run",
     "TestNG.UpdateNote.executor": "Run",
     "TestNG.UpdateNote.updateExistingNote.executor": "Run",
     "TestNG.UpdateNoteFacade.executor": "Run",
@@ -96,6 +135,9 @@
     "TestNG.UpdateNoteStatus.executor": "Run",
     "TestNG.UpdateNoteStatus.updateNoteStatus.executor": "Run",
     "TestNG.UpdateNoteStatus.updateNoteStatusWithFacadeDesign.executor": "Run",
+    "TestNG.UpdateNoteWithRandomData.executor": "Run",
+    "TestNG.UpdateNoteWithStaticData.executor": "Run",
+    "TestNG.UpdateNoteWithStaticData.updateNoteByStaticDataFromJsonFile.executor": "Run",
     "TestNG.UpdateUserPassword.changeUserPassword.executor": "Run",
     "TestNG.UpdateUserPassword.executor": "Run",
     "TestNG.UpdateUserPasswordFacade.executor": "Run",
@@ -103,10 +145,11 @@
     "TestNG.UpdateUserPasswordFacade.updateUserPasswordFacade.executor": "Run",
     "TestNG.test.test.executor": "Run",
     "TestNG.tests.CreateNewNote.executor": "Run",
+    "TestNG.tests.CreateNewUser.* and 3 more.executor": "Run",
     "TestNG.tests.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Automation_Projects/NotesApiWithRestassuredWithoutPojo/src/main/java",
+    "last_opened_file_path": "D:/Automation_Projects/NotesApiWithRestassuredWithoutPojo/src/test/java/tests/UpdateNote",
     "onboarding.tips.debug.path": "C:/Users/Yehia.Metwally/OneDrive/yehia/Desktop/AutomatestProject/NotesAPI/src/main/java/io/github/YehiaMetwally95/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -119,33 +162,25 @@
       <recent name="objectModels" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Automation_Projects\NotesApiWithRestassuredWithoutPojo\src\test\java\tests\UpdateNote" />
+      <recent name="D:\Automation_Projects\NotesApiWithRestassuredWithoutPojo\src\test\java\tests" />
       <recent name="D:\Automation_Projects\NotesApiWithRestassuredWithoutPojo\src\main\java" />
       <recent name="F:\Automation Projects\NotesApiWithRestassured\src\main\resources\propertiesFiles" />
       <recent name="F:\Automation Projects\NotesApiWithRestassured\src\main\java" />
-      <recent name="D:\AutomatestProject\NotesAPI\src\main\resources" />
-      <recent name="D:\AutomatestProject\NotesAPI\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\AutomatestProject\NotesAPI\src\test\resources\Test_Data_Json_Files" />
       <recent name="D:\AutomatestProject\NotesAPI" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="tests.UpdateNote" />
+      <recent name="tests.CreateNewNote" />
+      <recent name="tests.CreateNewUser" />
       <recent name="utils" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CreateNewNote.createNewNoteByDynamicRandomData">
-    <configuration name="Open_Allure_Report" type="BatchConfigurationType" factoryName="Batch" temporary="true">
-      <module name="YehiaProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="Open_Allure_Report.bat" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateNewNote" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.tests.CreateNewUser.* and 3 more">
+    <configuration name="CreateNewNoteWithRandomData" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="YehiaProject" />
       <extension name="coverage">
         <pattern>
@@ -154,7 +189,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests.CreateNewNote" />
-      <option name="MAIN_CLASS_NAME" value="tests.CreateNewNote.CreateNewNote" />
+      <option name="MAIN_CLASS_NAME" value="tests.CreateNewNote.CreateNewNoteWithRandomData" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -162,17 +197,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateNewNote.createNewNoteByDynamicRandomData" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UpdateNoteWithRandomData" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="YehiaProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.CreateNewNote.*" />
+          <option name="PATTERN" value="tests.UpdateNote.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests.CreateNewNote" />
-      <option name="MAIN_CLASS_NAME" value="tests.CreateNewNote.CreateNewNote" />
-      <option name="METHOD_NAME" value="createNewNoteByDynamicRandomData" />
+      <option name="PACKAGE_NAME" value="tests.UpdateNote" />
+      <option name="MAIN_CLASS_NAME" value="tests.UpdateNote.UpdateNoteWithRandomData" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateNoteWithStaticData" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="YehiaProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.UpdateNote.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests.UpdateNote" />
+      <option name="MAIN_CLASS_NAME" value="tests.UpdateNote.UpdateNoteWithStaticData" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateNoteWithStaticData.updateNoteByStaticDataFromJsonFile" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="YehiaProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.UpdateNote.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests.UpdateNote" />
+      <option name="MAIN_CLASS_NAME" value="tests.UpdateNote.UpdateNoteWithStaticData" />
+      <option name="METHOD_NAME" value="updateNoteByStaticDataFromJsonFile" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -180,36 +249,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateNewUser.createNewUserByDynamicRandomData" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="tests.CreateNewUser.* and 3 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="YehiaProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.CreateNewUser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests.CreateNewUser" />
-      <option name="MAIN_CLASS_NAME" value="tests.CreateNewUser.CreateNewUser" />
-      <option name="METHOD_NAME" value="createNewUserByDynamicRandomData" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="PATTERN" />
       <properties />
       <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="tests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="YehiaProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <properties />
-      <listeners />
+      <patterns>
+        <pattern testClass="tests.CreateNewUser.*" />
+        <pattern testClass="tests.CreateNewNote.*" />
+        <pattern testClass="tests.ChangeUserPassword.*" />
+        <pattern testClass="tests.UpdateNote.*" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -222,11 +272,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CreateNewNote.createNewNoteByDynamicRandomData" />
-        <item itemvalue="TestNG.tests" />
-        <item itemvalue="Batch.Open_Allure_Report" />
-        <item itemvalue="TestNG.CreateNewNote" />
-        <item itemvalue="TestNG.CreateNewUser.createNewUserByDynamicRandomData" />
+        <item itemvalue="TestNG.tests.CreateNewUser.* and 3 more" />
+        <item itemvalue="TestNG.UpdateNoteWithRandomData" />
+        <item itemvalue="TestNG.UpdateNoteWithStaticData" />
+        <item itemvalue="TestNG.UpdateNoteWithStaticData.updateNoteByStaticDataFromJsonFile" />
+        <item itemvalue="TestNG.CreateNewNoteWithRandomData" />
       </list>
     </recent_temporary>
   </component>
@@ -487,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736720801201</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Test">
+      <option name="closed" value="true" />
+      <created>1736720942023</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1736720942023</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
