@@ -1,16 +1,8 @@
 package objectModels;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.google.gson.JsonObject;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import pojoClasses.GetNoteRequestPojo;
-import pojoClasses.GetNoteResponsePojo;
-import yehiaEngine.managers.JsonManager;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static yehiaEngine.managers.ApisManager.ParameterType.*;
 import static yehiaEngine.managers.ApisManager.AuthType.*;

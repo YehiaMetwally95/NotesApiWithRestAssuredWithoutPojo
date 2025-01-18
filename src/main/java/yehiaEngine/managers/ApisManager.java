@@ -1,10 +1,7 @@
 package yehiaEngine.managers;
 
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.JsonSyntaxException;
 import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
 import io.restassured.http.Header;
@@ -20,9 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static org.hamcrest.Matchers.equalTo;
 import static yehiaEngine.loggers.LogHelper.logInfoStep;
-import static yehiaEngine.managers.JsonManager.convertMapToJsonObject;
 
 public class ApisManager {
     /**
@@ -93,6 +88,10 @@ public class ApisManager {
                     else if (requestBody instanceof Map map){
                         request = request.formParams(map);
                     }
+                    else {
+                        Map<String, Object> map = JsonManager.convertJsonStringToMap(requestBody);
+                        request = request.formParams(map);
+                    }
                     break;
                 }
                 case NONE:{
@@ -158,6 +157,10 @@ public class ApisManager {
                         request = request.formParams(map);
                     }
                     else if (requestBody instanceof Map map){
+                        request = request.formParams(map);
+                    }
+                    else {
+                        Map<String, Object> map = JsonManager.convertJsonStringToMap(requestBody);
                         request = request.formParams(map);
                     }
                     break;
@@ -446,12 +449,24 @@ public class ApisManager {
     /**
      * *********************************  Mapping To Pojo Class  ****************************************
      */
-    public static <T> T mapResponseToPojo(Response response,Class<T> pojoClass) {
+    public static <T> T mapResponseToPojoClass (Response response,Class<T> pojoClass) {
         try{
             String responseBodyAsString = getResponseBody(response);
             JsonMapper mapper = new JsonMapper();
             logInfoStep("Mapping Response To Pojo Class ["+pojoClass.getSimpleName()+"]");
             return mapper.readValue(responseBodyAsString,pojoClass);
+
+        }catch (Exception e){
+            logInfoStep("Failed to Map Response To Pojo Class ["+pojoClass.getSimpleName()+"]");
+            return null;
+        }
+    }
+
+    public static <T> T mapJsonStringToPojoClass (String jsonString,Class<T> pojoClass) {
+        try{
+            JsonMapper mapper = new JsonMapper();
+            logInfoStep("Mapping Response To Pojo Class ["+pojoClass.getSimpleName()+"]");
+            return mapper.readValue(jsonString,pojoClass);
 
         }catch (Exception e){
             logInfoStep("Failed to Map Response To Pojo Class ["+pojoClass.getSimpleName()+"]");
